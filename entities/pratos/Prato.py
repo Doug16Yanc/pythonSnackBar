@@ -5,15 +5,15 @@ class Prato:
         self._quantidade = quantidade
         self._preco = preco
 
-       
+
 
         @property
         def id(self):
-            return self._codigo
+            return self._id
 
         @id.setter
-        def id(self, codigo):
-            self._codigo = codigo
+        def id(self, id):
+            self._id = id
             
         @property  
         def nome(self):

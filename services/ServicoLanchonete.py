@@ -1,7 +1,7 @@
+from entities.pratos.Prato import Prato
 from entities.pratos.Pizza import Pizza
 from entities.pratos.Lanche import Lanche
 from entities.pratos.Salgadinho import Salgadinho
-
 
 
 class ServicoLanchonete:
@@ -10,7 +10,7 @@ class ServicoLanchonete:
         self.itensDisponiveis = []
 
     def armazenarDados(self):
-        pizza1 = Pizza(id = 1, nome = "Bolonhesa", quantidade = 120, preco = 25.00, molho = "", recheio = "catupiry", borda = "peperoni")
+        pizza1 = Pizza( nome="Bolonhesa", quantidade=120, preco=25.00, molho="", recheio="catupiry", borda="peperoni")
 
         self.itensDisponiveis.append(pizza1)
 

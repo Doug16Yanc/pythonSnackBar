@@ -4,6 +4,7 @@ from services.ServicoLanchonete import ServicoLanchonete
 def interagePrimeiro():
     Util.imprimeMensagem("Bem-vindo(a) à lanchonete Tocatta and Fügue\n")
     servicoLanchonete = ServicoLanchonete()
+    servicoLanchonete.armazenarDados()
     servicoLanchonete.mostrarDisponiveis()
 
 def main():
