@@ -1,9 +1,9 @@
 class Lanche:
     def __init__(self, id, nome, quantidade, preco):
-        self.id = id
-        self.nome = nome
-        self.quantidade = quantidade
-        self.preco = preco
+        self._id = id
+        self._nome = nome
+        self._quantidade = quantidade
+        self._preco = preco
 
        
 

@@ -1,9 +1,9 @@
 class Pizza(Prato):
     def __init__(self, id, nome, quantidade, preco, molho, recheio, borda):
         super().__init__(id, nome, quantidade, preco, molho, recheio, borda)
-        self.molho = molho
-        self.recheio = recheio
-        self.borda = borda
+        self._molho = molho
+        self._recheio = recheio
+        self._borda = borda
 
         @property
         def molho(self):

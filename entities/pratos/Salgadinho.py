@@ -1,8 +1,8 @@
 class Salgadinho(Prato):
     def __init__(self, id, nome, quantidade, preco, recheio, massa):
         super().__init__(id, nome, quantidade, preco)
-        self.recheio = recheio
-        self.massa = massa
+        self._recheio = recheio
+        self._massa = massa
 
         @property
         def recheio(self):
