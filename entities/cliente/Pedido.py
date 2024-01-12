@@ -1,6 +1,7 @@
 class Pedido:
-    def __init__(self, cliente, taxaServico, itensConsumidos):
+    def __init__(self, cliente, statusPedido taxaServico, itensConsumidos):
         self.cliente = cliente
+        self.statusPedido = statusPedido
         self.taxaServico = taxaServico
 
         if not isinstance(list, itensConsumidos):
@@ -14,6 +15,14 @@ class Pedido:
         @cliente.setter
         def cliente(self, cliente):
             self._cliente = cliente
+
+        @property
+        def statusPedido(self):
+            return self._statusPedido
+
+        @statusPedido.setter
+        def statusPedido(self, statusPedido):
+            self._statusPedido = statusPedido
 
         @property
         def taxaServico(self):
