@@ -1,4 +1,4 @@
-class Lanch(Prato):
+class Lanche(Prato):
     def __init__(self, id, nome, quantidade, preco, pao, recheio, molho):
         super().__init__(id, nome, quantidade, preco)
         self._pao = pao

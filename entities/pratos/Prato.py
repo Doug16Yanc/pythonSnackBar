@@ -1,4 +1,4 @@
-class Lanche:
+class Prato:
     def __init__(self, id, nome, quantidade, preco):
         self._id = id
         self._nome = nome

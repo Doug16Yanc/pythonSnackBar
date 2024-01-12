@@ -1,5 +1,5 @@
 class Pedido:
-    def __init__(self, cliente, statusPedido taxaServico, itensConsumidos):
+    def __init__(self, cliente, statusPedido, taxaServico, itensConsumidos):
         self.cliente = cliente
         self.statusPedido = statusPedido
         self.taxaServico = taxaServico
