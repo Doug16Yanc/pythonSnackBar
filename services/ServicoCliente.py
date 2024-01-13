@@ -77,7 +77,8 @@ class ServicoCliente:
                                    "(2) - Cartão\n"
                                    "(3) - Pix\n"))
         if opcaoPagamento == 1:
-            pedido._formaPagamento = FormaPagamento.DINHEIRO
+            DINHEIRO = FormaPagamento.DINHEIRO
+            pedido._formaPagamento = DINHEIRO
             valor = float(input("Digite, em reais, o valor :"))
 
             if valor == gasto:
@@ -88,10 +89,12 @@ class ServicoCliente:
             else:
                 print("Valor não suficiente para realizar pagamento.\n")
         elif opcaoPagamento == 2:
-            pedido._formaPagamento = FormaPagamento.CARTÃO
+            CARTÃO = FormaPagamento.CARTÃO
+            pedido._formaPagamento = CARTÃO
             print("Obrigado por sua preferência. Volte sempre!\n")
         elif opcaoPagamento == 3:
-            pedido._formaPagamento = FormaPagamento.PIX
+            PIX = FormaPagamento.PIX
+            pedido._formaPagamento = PIX
             print("Obrigado por sua preferência. Volte sempre!\n")
         else:
             print("Opção não possível.\n")
@@ -105,19 +108,18 @@ class ServicoCliente:
         return valorFinal*1.05 #Taxa de entrega
 
     def calculaTroco(self, valor, gasto):
-        valorTroco = 0.0
         valorTroco = gasto - valor
         return valorTroco
     def geraComprovante(self, cliente, gasto, pedido):
         Util.imprimeMensagem("Dados do cliente:\n")
-        print(f"> Nome do cliente: {cliente._nome}"
+        print(f"> Nome do cliente: {cliente._nome}\n"
               f"> Id do indivíduo: {cliente._id}\n"
               f"> bairro do cliente: {cliente._endereco._bairro}\n")
         Util.imprimeMensagem("Dados de compra:\n")
-        for prato in enumerate(self.itensConsumidos):
-            print(f"{prato._id}\t{prato._nome}\t{prato._quantidade}\t\t{prato._preco}\n")
-        print(f"Dados de finanças:\n"
-             f"> Valor total : R$ {gasto}\n"
+        for i, (prato, quantidade) in enumerate(self.itensConsumidos):
+            print(f"{prato._id}\t{prato._nome}\t{quantidade}\t\t{prato._preco}\n")
+        Util.imprimeMensagem(f"Dados de finanças:\n")
+        print(f"> Valor total : R$ {gasto}\n"
               f"> Forma de pagamento : {pedido._formaPagamento}\n"
               )
 
