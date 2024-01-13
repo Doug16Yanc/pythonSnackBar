@@ -17,7 +17,7 @@ class Cliente:
         def nome(self):
             return self._nome
         
-        @npme.setter
+        @nome.setter
         def numero(self, nome):
             self._nome = nome
 

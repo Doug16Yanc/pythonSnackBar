@@ -42,6 +42,6 @@ class Endereco:
         def cep(self):
             return self._cep
 
-        @codigoPostal.setter
+        @cep.setter
         def cep(self, cep):
             self._cep = cep
