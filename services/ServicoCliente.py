@@ -37,12 +37,12 @@ class ServicoCliente:
                     if prato_encontrado:
                         quantidade = int(input(f"Digite a quantidade de {prato_encontrado._nome} que desejas:"))
 
-                        if quantidade <= prato_encontrado._quantidade:
+                        if quantidade <= prato_encontrado._quantidade and quantidade > 0:
                             print(f"Aquisição de {quantidade} {prato_encontrado._nome}(s) realizada(s) com sucesso!\n")
                             prato_encontrado._quantidade -= quantidade
-                            self.itensConsumidos.append(prato_encontrado)
+                            self.itensConsumidos.append((prato_encontrado, quantidade))
                         else:
-                            print("Quantidade insuficiente de item em estoque no momento.\n")
+                            print("Quantidade não possível.\n")
                     else:
                         print("Item não encontrado.\n")
                 except ValueError:
@@ -60,18 +60,32 @@ class ServicoCliente:
         numero = int(input("Número do domícilio:"))
         bairro = input("Bairro:")
 
-
         cliente = Cliente(id, nome, cpf, Endereco(rua, numero, bairro, municipio="Pedra Branca", cep=63630000))
+
+        self.realizaPagamento(cliente)
+
+
+    def realizaPagamento(self, cliente):
+        gasto = self.calculaTaxaServico()
+        Util.imprimeMensagem(f"Gasto total: R$ {gasto}.\n")
 
         self.geraComprovante(cliente)
 
+    def calculaTaxaServico(self):
+        valorFinal = 0.0
+        for prato, quantidade in self.itensConsumidos:
+            valorFinal += prato._preco * quantidade
+        return valorFinal
+
     def geraComprovante(self, cliente):
         Util.imprimeMensagem("Dados do cliente:\n")
-        print(f"> Nome do cliente: {cliente._nome}\n"
+        print(f"> Nome do cliente: {cliente._nome}"
+              f"> Id do indivíduo: {cliente.id}\n"
               f"> bairro do cliente: {cliente._endereco._bairro}\n")
         Util.imprimeMensagem("Dados de compra:\n")
         for i, prato in enumerate(self.itensConsumidos):
             print(f"{prato._id}\t{prato._nome}\t{prato._quantidade}\t\t{prato._preco}\n")
+
 
 
 
