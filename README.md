@@ -25,8 +25,7 @@ tipo de pagamento realizado pelo cliente (Dinheiro, cartão ou pix). O CPF do cl
 5 - O sistema deve ter um sistema de cálculo de troco em caso de pagamento realizado por dinheiro em cédula e retornar o valor ao usuário.
 
 Para o cliente, é imprescendível que o sistema tenha funcionalidades de apresentação de cardápio virtual, informações adicionais sobre os pratos, a título de exemplo, pizzas possuem 
-sabor e ingredientes de borda, recheio e molho, lanches têm sobre molhos, recheio e o tipo de pão, salgadinhos têm sobre recheio e massa. Além disso, é importante que haja bons trata-
-mentos de exceções, verificações em testes de usabilidade e persistência e segurança do software em acessos simultâneos mesmo com uso de tecnologias de orquestração de contêineres como
+sabor e ingredientes de borda, recheio e molho, lanches têm sobre molhos, recheio e o tipo de pão, salgadinhos têm sobre recheio e massa. Além disso, é importante que haja bons tratamentos de exceções, verificações em testes de usabilidade e persistência e segurança do software em acessos simultâneos mesmo com uso de tecnologias de orquestração de contêineres como
 Docker e Kubernetes ou a garantia de propriedades de sistemas de gerenciamento de bancos de dados, sejam eles relacionais sejam não-relacionais.
 
 
