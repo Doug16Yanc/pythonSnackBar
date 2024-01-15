@@ -1,6 +1,7 @@
 class Prato:
-    def __init__(self, id, nome, quantidade, preco):
+    def __init__(self, id, tipo, nome, quantidade, preco):
         self._id = id
+        self._tipo = tipo
         self._nome = nome
         self._quantidade = quantidade
         self._preco = preco
@@ -14,6 +15,13 @@ class Prato:
         @id.setter
         def id(self, id):
             self._id = id
+        @property
+        def tipo(self):
+            return self._tipo
+
+        @tipo.setter
+        def tipo(self):
+            self._tipo = tipo
             
         @property  
         def nome(self):

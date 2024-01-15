@@ -1,8 +1,8 @@
 from entities.pratos.Prato import Prato
 
 class Lanche(Prato):
-    def __init__(self, id, nome, quantidade, preco, pao, recheio, molho):
-        super().__init__(id, nome, quantidade, preco)
+    def __init__(self, id, tipo, nome, quantidade, preco, pao, recheio, molho):
+        super().__init__(id, tipo, nome, quantidade, preco)
         self._pao = pao
         self._recheio = recheio
         self._molho = molho
@@ -27,6 +27,6 @@ class Lanche(Prato):
         def molho(self):
             return self._molho
 
-        @preco.setter
-        def preco(self, molho):
+        @molho.setter
+        def molho(self, molho):
             self._molho = molho
